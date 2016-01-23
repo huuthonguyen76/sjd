@@ -36,5 +36,6 @@ var sampleJson = `
   }}`
 	var myJson = new(sjd.JsonDecode)
 	fmt.Print(myJson.SetJsonString(sampleJson).Path("widget.window.name").GetValue())
+	// result: "main_window"
 ...
 ```

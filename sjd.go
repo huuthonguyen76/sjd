@@ -11,13 +11,17 @@ type JsonDecode struct {
 	fieldLen   int
 }
 
-func (this *JsonDecode) parseJson() (map[string]interface{}, error) {
+func (this JsonDecode) parseJson() (map[string]interface{}, error) {
 	var jsonParsed map[string]interface{}
 
 	err := json.Unmarshal([]byte(this.jsonString), &jsonParsed)
 
 	return jsonParsed, err
 }
+
+/*
+ * Set Json for starting to use sjd feature
+ */
 
 func (this *JsonDecode) SetJsonString(jsonString string) *JsonDecode {
 	this.jsonString = jsonString
@@ -39,7 +43,7 @@ func (this *JsonDecode) Path(path string) *JsonDecode {
  * Get Value of current path
  */
 
-func (this *JsonDecode) GetValue() interface{} {
+func (this JsonDecode) GetValue() interface{} {
 	var result interface{}
 	jsonParsed, err := this.parseJson()
 
@@ -62,7 +66,7 @@ func (this *JsonDecode) GetValue() interface{} {
  * Get Json Value of current path
  */
 
-func (this *JsonDecode) GetJsonValue() []byte {
+func (this JsonDecode) GetJsonValue() []byte {
 	var currentValue = this.GetValue()
 
 	if currentValue == nil {

@@ -1,4 +1,4 @@
-Sjd is a small library for manipulating with Unknown Json Structure
+Sjd is a small library for accessing data with Unknown Json Structure.
 
 ##How to use
 

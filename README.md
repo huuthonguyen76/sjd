@@ -7,7 +7,15 @@ Sjd is a small library for manipulating with Unknown Json Structure
 ```go
 ...
 
-var sampleJson = `
+package main
+
+import (
+	"fmt"
+	"github.com/huuthonguyen76/sjd"
+)
+
+func main() {
+	var sampleJson = `
   {"widget": {
     "debug": "on",
     "window": {
@@ -37,5 +45,9 @@ var sampleJson = `
 	var myJson = new(sjd.JsonDecode)
 	fmt.Print(myJson.SetJsonString(sampleJson).Path("widget.window.name").GetValue())
 	// result: "main_window"
+	fmt.Print(string(myJson.SetJsonString(sampleJson).Path("widget.window").GetJsonValue()))
+	// result: {"height":500,"name":"main_window","title":"Sample Konfabulator Widget","width":500}
+}
+
 ...
 ```

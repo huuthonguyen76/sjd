@@ -51,3 +51,13 @@ func main() {
 
 ...
 ```
+
+Current feature:
+- Access element by Json's key.
+- Get Value of Json's Path.
+- Get Json Value of Json's Path.
+
+Incoming feature:
+- Choose specific field to return.
+- Support access element in Json's array.
+- Support access element by Json's array index. 
